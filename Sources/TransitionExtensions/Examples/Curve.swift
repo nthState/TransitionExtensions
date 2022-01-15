@@ -20,7 +20,9 @@ struct Curve: Shape {
     
     let p = Path { path in
       path.move(to: .zero)
-      path.addCurve(to: CGPoint(x: rect.size.width, y: rect.size.height), control1: CGPoint(x: rect.size.width, y: 0), control2: CGPoint(x: -rect.size.width, y: 0))
+      path.addCurve(to: CGPoint(x: rect.size.width, y: rect.size.height),
+                    control1: CGPoint(x: rect.size.width, y: 0),
+                    control2: CGPoint(x: -rect.size.width, y: 0))
     }
     
     return p

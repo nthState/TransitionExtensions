@@ -1,13 +1,18 @@
 # Chris's SwiftUI TransitionExtensions
 
-A description of this package.
+An extension to `transition` that lets you transition in/out views along a `Path`
 
 ```
+import SwiftUI
 import TransitionExtensions
 
-struct SwiftUIView: View {
+struct SwiftUIView {
+  @State var animate: Bool = false
+}
 
-  private func translationPath() -> Path {
+extension SwiftUIView: View {
+  
+  func translationgPath() -> Path {
     Curve()
       .path(in: CGRect(x: 0, y: 0, width: 200, height: 200))
   }
@@ -16,14 +21,31 @@ struct SwiftUIView: View {
     VStack {
       HStack {
         if animate {
-          Text("blah")
-            .zIndex(1)
+          Text("Hello, Mars!")
         } else {
-          Text("Hello, World!")
-          .transition(.translate(along: translationPath()).animation(.easeInOut(duration: 3)))
+          Text("Hello, Earth!")
+            .transition(.translate(along: translationgPath()).animation(.easeInOut(duration: 3)))
         }
       }
+      .padding(24)
+      
+      Button {
+        withAnimation {
+          animate.toggle()
+        }
+      } label: {
+        Text("Toggle Animation")
+      }
+      
     }
   }
+  
 }
+
+struct SwiftUIView_Previews: PreviewProvider {
+  static var previews: some View {
+    SwiftUIView()
+  }
+}
+
 ```

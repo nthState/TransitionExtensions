@@ -10,13 +10,13 @@
 
 import SwiftUI
 
-struct SwiftUIView {
+internal struct ExampleSwiftUIView {
   @State var animate: Bool = false
 }
 
-extension SwiftUIView: View {
-
-  func givePath() -> Path {
+extension ExampleSwiftUIView: View {
+  
+  func translationgPath() -> Path {
     Curve()
       .path(in: CGRect(x: 0, y: 0, width: 200, height: 200))
   }
@@ -25,33 +25,29 @@ extension SwiftUIView: View {
     VStack {
       HStack {
         if animate {
-          Text("blah")
-            .zIndex(1)
+          Text("Hello, Mars!")
         } else {
-          Text("Hello, World!")
-          .transition(.translate(along: givePath()).animation(.easeInOut(duration: 3)))
+          Text("Hello, Earth!")
+            .transition(.translate(along: translationgPath()).animation(.easeInOut(duration: 3)))
         }
       }
+      .padding(24)
       
       Button {
         withAnimation {
           animate.toggle()
         }
       } label: {
-        Text("Start")
+        Text("Toggle Animation")
       }
-      
-      Curve()
-        .stroke(Color.green, lineWidth: 2)
-        .frame(width: 200, height: 200)
       
     }
   }
   
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        SwiftUIView()
-    }
+struct ExampleSwiftUIView_Previews: PreviewProvider {
+  static var previews: some View {
+    ExampleSwiftUIView()
+  }
 }
