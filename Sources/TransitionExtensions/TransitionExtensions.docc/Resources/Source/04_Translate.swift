@@ -1,19 +1,10 @@
-# Chris's SwiftUI Transition Extensions
-
-An extension to `transition` that lets you transition in/out views along a `Path`
-
-```
 import SwiftUI
 import TransitionExtensions
 
-struct SwiftUIView {
-  @State var animate: Bool = false
-}
-
-extension SwiftUIView: View {
+struct MyView: View {
   
   var path -> Path {
-    Curve()
+    Rectangle()
       .path(in: CGRect(x: 0, y: 0, width: 200, height: 200))
   }
   
@@ -41,11 +32,3 @@ extension SwiftUIView: View {
   }
   
 }
-
-struct SwiftUIView_Previews: PreviewProvider {
-  static var previews: some View {
-    SwiftUIView()
-  }
-}
-
-```

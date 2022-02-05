@@ -9,13 +9,22 @@
 
 
 import XCTest
+import SwiftUI
 @testable import TransitionExtensions
 
 final class TransitionExtensionsTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        //XCTAssertEqual(TransitionExtensions().text, "Hello, World!")
-    }
+  
+  func test_translatedd_point() throws {
+    
+    let shape = Rectangle()
+    
+    let path = shape.path(in: CGRect(origin: .zero, size: CGSize(width: 100, height: 100))).trimmedPath(from: 0, to: 0.5)
+    
+    let actual = TranslateAlongPath(percent: 0.5, path: path).path.currentPoint
+    
+    let expected = CGPoint(x: 100, y: 100)
+    
+    XCTAssertEqual(actual, expected, "point should match")
+  }
+  
 }

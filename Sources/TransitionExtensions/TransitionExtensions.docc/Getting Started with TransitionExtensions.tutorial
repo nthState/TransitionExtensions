@@ -1,0 +1,48 @@
+@Tutorial() {
+  @Intro(title: "Getting Started with TransitionExtensions in SwiftUI") {
+    In this tutorial, I'll show you how to integrate TransitionExteions
+    into your SwiftUI project to translate a view along a path
+    
+
+  }
+  
+  @Section(title: "Translate along a path") {
+    @ContentAndMedia {
+      Let's start with two views, we'll toggle between the two.
+    }
+    
+    @Steps {
+      @Step {
+        Add the following code to your project. Add a button to toggle which view is shown
+        
+        @Code(name: "Translate", file: "01_Translate.swift") {
+          @Image(source: "01_Translate.png")
+        }
+      }
+      
+      @Step {
+        Import the ``TransitionExtensions`` Swift Package
+        
+        @Code(name: "Translate", file: "02_Translate.swift") {
+          @Image(source: "02_Translate.png")
+        }
+      }
+      
+      @Step {
+        Add a Path on which you want to translate the view along
+        
+        @Code(name: "Translate", file: "03_Translate.swift") {
+          @Image(source: "03_Translate.png")
+        }
+      }
+      
+      @Step {
+        Add the transition on the view you wish to translate
+        
+        @Code(name: "Translate", file: "04_Translate.swift") {
+          @Image(source: "04_Translate.png")
+        }
+      }
+    }
+  }
+}

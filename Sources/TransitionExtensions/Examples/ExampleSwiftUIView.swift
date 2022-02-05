@@ -16,7 +16,7 @@ internal struct ExampleSwiftUIView {
 
 extension ExampleSwiftUIView: View {
   
-  func translationgPath() -> Path {
+  func translationPath() -> Path {
     Curve()
       .path(in: CGRect(x: 0, y: 0, width: 200, height: 200))
   }
@@ -28,7 +28,7 @@ extension ExampleSwiftUIView: View {
           Text("Hello, Mars!")
         } else {
           Text("Hello, Earth!")
-            .transition(.translate(along: translationgPath()).animation(.easeInOut(duration: 3)))
+            .transition(.translate(along: translationPath()).animation(.easeInOut(duration: 3)))
         }
       }
       .padding(24)
