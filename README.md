@@ -1,6 +1,6 @@
 # Chris's SwiftUI Transition Extensions
 
-An extension to `transition` that lets you transition in/out views along a `Path`
+An extension to `transition` that lets you translate in/out views along a `Path`
 
 ```
 import SwiftUI
