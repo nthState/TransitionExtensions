@@ -1,4 +1,4 @@
-@Tutorials(name: "aa") {
+@Tutorials(name: "Chris") {
     @Intro(title: "Transition Extension Guide") {
         I hope to update these guides as I expand the Transition Extensions Swift Package
     }
