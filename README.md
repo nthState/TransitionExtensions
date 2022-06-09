@@ -49,3 +49,27 @@ struct SwiftUIView_Previews: PreviewProvider {
 }
 
 ```
+
+
+## Documentation
+
+Documentation website here: https://nthstate.github.io/TransitionExtensions/documentation/transitionextensions/
+
+Building the docs
+
+```
+swift build
+```
+
+```
+PACKAGE_NAME=TransitionExtensions
+REPOSITORY_NAME=TransitionExtensions
+OUTPUT_PATH=./docs
+
+swift package --allow-writing-to-directory $OUTPUT_PATH \
+    generate-documentation --target $PACKAGE_NAME \
+    --disable-indexing \
+    --transform-for-static-hosting \
+    --hosting-base-path $REPOSITORY_NAME \
+    --output-path $OUTPUT_PATH
+ ```
